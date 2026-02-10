@@ -1,68 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome Sooraj</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .welcome-box {
-            background: rgba(0, 0, 0, 0.25);
-            padding: 40px;
-            border-radius: 12px;
-            max-width: 500px;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            background-color: #ffffff;
-            color: #333;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="welcome-box">
-        <h1>Welcome Sooraj! 🎉</h1>
-        <p>
-            We’re glad you’re here. This is a sample welcome page built with
-            simple HTML and CSS. Feel free to customize it however you like.
-        </p>
-        <button onclick="alert('Welcome aboard!')">Get Started</button>
+  <audio id="funnySound" src="funny.mp3"></audio>
+  <audio id="loveMusic" src="./love.mp3" loop></audio>
+
+ <div class="container" id="mainBox">
+
+  <!-- QUESTION AREA -->
+  <div class="question-box">
+    <div class="ribbon">
+      <span>For my Pookie 🧸💖</span>
     </div>
 
+    <div class="candles">
+      <div class="candle left"></div>
+      <div class="candle right"></div>
+    </div>
+
+    <h1>Hey AMMU 💖</h1>
+    <h2>Will you be my Valentine? 💌</h2>
+  </div>
+
+  <!-- BUTTONS STAY THE SAME -->
+  <div class="buttons">
+    <button id="yesBtn">YES 😍</button>
+    <button id="noBtn">NO 🙈</button>
+  </div>
+
+</div>
+
+
+  <!-- Celebration -->
+ <div class="celebration" id="celebration">
+  <div class="love-bg"></div>
+
+  <div class="love-header" id="loveHeader">
+  <img src="./us1.jpg" class="couple-img landing-img" style="min-width:270px;">
+  <img src="./us2.jpg" class="couple-img envelope-img">
+</div>
+
+<button id="letterBtn" class="letter-btn">Letter for you 💌</button>
+
+  <div class="typing-text" id="typingText"></div>
+
+<div class="envelope" id="envelope">
+  <div class="envelope-back"></div>
+  <div class="letter-paper">
+    <h3>My Dearest Ammu ❤️</h3>
+    <p>
+      From the moment you came into my life, everything became warmer,
+      brighter, and happier. You’re my safe place, my smile, my forever.
+    </p>
+    <p>
+      Thank you for being you… for loving me, supporting me,
+      and choosing me every single day 💖
+    </p>
+    <p class="sign">
+      Forever yours,<br>
+      <strong>Your Pookie 🧸</strong>
+    </p>
+  </div>
+  <div class="envelope-front"></div>
+</div>
+
+
+  <div class="hearts"></div>
+  <div class="kisses"></div>
+</div>
+
+
+  <!-- <script src="./moveButtons.js"></script> -->
+  <script src="./celebration.js"></script>
 </body>
 </html>
-
-
