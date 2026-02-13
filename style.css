@@ -446,8 +446,9 @@ button {
 
 .envelope {
   position: relative;
-  width: 320px;
-  height: 220px;
+  width: min(90vw, 360px);
+  height: auto;
+  aspect-ratio: 4 / 3;
   margin-top: 20px;
   display: none;
   animation: popIn 0.8s ease;
@@ -459,27 +460,25 @@ button {
   background: #ffe3ec;
   border-radius: 12px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-  min-height:310px;
+  min-height:340px;
 }
 
 /* Letter inside */
 .letter-paper {
   position: absolute;
   width: 90%;
-  height: 90%;
+  height: auto;              /* 🔥 let it grow naturally */
+  max-height: none;          /* remove height restriction */
   background: #fff;
-  top: 10px;
+  top: 8%;
   left: 5%;
-  padding: 18px;
+  padding: clamp(12px, 3vw, 20px);
   border-radius: 8px;
   text-align: left;
-  transform: translateY(60px);
+  transform: translateY(40px);
   opacity: 0;
   transition: all 1s ease;
-  min-height:245px;
-  margin-top:10px;
-    text-shadow: 0 2px 10px rgba(255, 78, 141, 0.25);
-  backdrop-filter: blur(1px);
+  overflow: hidden;          /* ❌ no vertical scroll */
 }
 
 .letter-paper h3 {
@@ -525,6 +524,10 @@ button {
   transition: transform 1s ease, opacity 1s ease;
   z-index: 5;
   
+}
+
+.envelope {
+  aspect-ratio: 4 / 3;
 }
 
 /* When envelope opens */
@@ -694,5 +697,48 @@ perspective: clamp(1000px, 150vw, 2200px);
   }
 }
 
-.final-btn{
-margin: 20px 0px 0px 20px;}
+.final-btn {
+  margin-top: 20px;
+  padding: clamp(8px, 3vw, 14px) clamp(16px, 5vw, 26px);
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff2f6d, #ff85a2);
+  color: white;
+  cursor: pointer;
+  font-size: clamp(14px, 4vw, 18px);
+  box-shadow: 0 8px 20px rgba(255,47,109,0.6);
+  transition: 0.3s ease;
+  width: fit-content;
+  align-self: center;
+}
+
+.letter-paper h3 {
+  font-size: clamp(16px, 5vw, 22px);
+}
+
+.letter-paper p {
+  font-size: clamp(13px, 4vw, 16px);
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+
+  .celebration {
+    padding: 20px;
+  }
+
+  .love-header.move-up {
+    top: 1%;
+  }
+
+  .carousel {
+    width: 90vw;
+    height: 90vw;
+  }
+
+}
+
+.final-btn {
+  display: none; /* hide initially */
+  margin-top: 550px;
+}
