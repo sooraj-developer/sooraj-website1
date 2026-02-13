@@ -731,19 +731,7 @@ perspective: clamp(1000px, 150vw, 2200px);
 }
 
 .final-btn {
-  display: none;
-  position: fixed;      /* 🔥 stick to screen */
-  bottom: 25px;         /* distance from bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  padding: clamp(8px, 3vw, 14px) clamp(16px, 5vw, 26px);
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(135deg, #ff2f6d, #ff85a2);
-  color: white;
-  cursor: pointer;
-  font-size: clamp(14px, 4vw, 18px);
-  box-shadow: 0 8px 20px rgba(255,47,109,0.6);
-  transition: 0.3s ease;
-  z-index: 50;
+  display: none; /* hide initially */
+  margin-top: 400px;
+  z-index:100;
 }
