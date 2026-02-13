@@ -169,3 +169,11 @@ noBtn.addEventListener("click", () => {
   }
 
 });
+
+
+
+
+letterBtn.addEventListener("click", () => {
+  envelope.classList.add("open");
+  finalBtn.style.display = "block"; // show button after open
+});
