@@ -73,12 +73,11 @@ function typeText(text) {
 const letterBtn = document.getElementById("letterBtn");
 const envelope = document.getElementById("envelope");
 const coupleImg = document.querySelector(".couple-img");
-const funnySound = document.getElementById("funnySound");
 
 const loveHeader = document.getElementById("loveHeader");
 
 letterBtn.addEventListener("click", () => {
-  funnySound.play();
+  //funnySound.play();
 
   // Move image upward
   loveHeader.classList.add("move-up");
@@ -94,4 +93,79 @@ letterBtn.addEventListener("click", () => {
 
   letterBtn.style.display = "none";
   typingText.style.display ="none";
+});
+
+
+
+const finalBtn = document.getElementById("finalSurpriseBtn");
+const finalSurprise = document.getElementById("finalSurprise");
+
+finalBtn.addEventListener("click", () => {
+	 envelope.style.display = "none";
+  finalSurprise.style.display = "flex";
+  startBackgroundEmojis(); // START EMOJIS
+});
+
+const bgEmojis = document.getElementById("bgEmojis");
+
+function startBackgroundEmojis() {
+
+  const emojis = ["❤️","💖","💕","💗","💘","💝","💋","😍","🥰","😘"];
+
+  setInterval(() => {
+
+    const emoji = document.createElement("span");
+
+    emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+    emoji.style.left = Math.random() * 100 + "vw";
+
+    emoji.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    emoji.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+    bgEmojis.appendChild(emoji);
+
+    setTimeout(() => {
+      emoji.remove();
+    }, 12000);
+
+  }, 400);
+}
+
+
+const noBtn = document.getElementById("noBtn");
+const funnySound = document.getElementById("funnySound");
+
+let noClickCount = 0;
+
+const funnyMessages = [
+  "Are you sure? 😏",
+  "Think again Ammu 😂",
+  "Wrong answer baby 💔",
+  "System error ❌ Try again!",
+  "Only YES is allowed 😜",
+  "Nice try 🤭",
+  "Okay okay press YES now 😌"
+];
+
+noBtn.addEventListener("click", () => {
+
+  funnySound.play();
+
+  // Show random funny message
+  const message = funnyMessages[noClickCount % funnyMessages.length];
+  alert(message);
+
+  // Shrink button each click
+  noBtn.style.transform = `scale(${1 - (noClickCount * 0.1)})`;
+
+  noClickCount++;
+
+  // After 5 clicks change button to YES
+  if (noClickCount >= 5) {
+    noBtn.innerText = "YES 😍";
+    noBtn.style.background = "#ff2f6d";
+  }
+
 });
